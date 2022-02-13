@@ -1,0 +1,21 @@
+@import '../../../styles/variables';
+
+.btn {
+  border: 1px solid $gray-transparent;
+  border-radius: 2px;
+  background: $white;
+  box-shadow: $shadow-many;
+  color: $primary-blue;
+  cursor: pointer;
+  font-weight: bold;
+  height: 36px;
+  min-width: 126px;
+  padding: 10px 16px;
+  text-transform: uppercase;
+
+  &.btn-primary {
+    background: $primary-blue;
+    border: 1px solid $primary-blue;
+    color: $white;
+  }
+}

@@ -1,0 +1,35 @@
+@import '../../../styles/variables';
+
+.table {
+  &-header {
+    align-items: center;
+    display: flex;
+    background: $gray;
+    border: 1px solid $gray-transparent;
+    height: 60px;
+
+    .col {
+      align-items: center;
+      display: flex;
+      gap: 0 12px;
+    }
+  }
+
+  &-row {
+    display: flex;
+
+    .col {
+      border-bottom: 1px solid $table-border;
+      border-right: 1px solid $table-border;
+      text-transform: capitalize;
+
+      &:first-child {
+        border-left: 1px solid $table-border;
+      }
+    }
+  }
+  .col {
+    flex: 1;
+    padding: 20px 24px;
+  }
+}

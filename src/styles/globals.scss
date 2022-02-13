@@ -1,0 +1,37 @@
+@import '../styles/variables';
+
+body {
+  background: $light-gray;
+  color: $primary-black;
+  font-family: $font-family;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+a,
+span,
+p,
+input,
+select {
+  box-sizing: border-box;
+}
+
+a {
+  color: $primary-blue;
+}
+
+h1,
+h2,
+a,
+span,
+p,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  box-sizing: border-box;
+}

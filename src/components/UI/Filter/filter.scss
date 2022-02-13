@@ -1,0 +1,97 @@
+@import '../../../styles/variables';
+
+.list-filter {
+  align-items: center;
+  background: $gray;
+  border: 1px solid $gray-transparent;
+  border-bottom: none;
+  display: flex;
+  height: 60px;
+  justify-content: flex-end;
+  gap: 0 16px;
+  padding: 12px 16px;
+}
+
+.filter {
+  align-items: center;
+  background: $white;
+  border: 1px solid $gray-transparent;
+  border-radius: 3px;
+  display: flex;
+  gap: 0 15px;
+  height: 36px;
+  justify-content: space-between;
+  min-width: 438px;
+  padding: 6px 10px;
+  position: relative;
+
+  &-selected {
+    display: flex;
+
+    .option {
+      align-items: center;
+      background: $light-blue;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      height: 24px;
+      margin-right: 8px;
+      padding: 2px 8px;
+      text-transform: capitalize;
+    }
+  }
+
+  &-count {
+    align-items: center;
+    display: flex;
+    gap: 0 8px;
+
+    .status {
+      align-items: center;
+      display: flex;
+    }
+
+    .selected {
+      align-items: center;
+      background-color: $primary-blue;
+      border-radius: 2px;
+      color: $white;
+      display: flex;
+      font-weight: bold;
+      height: 24px;
+      padding: 0 8px;
+    }
+
+    .open-filter {
+      cursor: pointer;
+    }
+  }
+
+  &-options {
+    background: $white;
+    border: 1px solid $gray-transparent;
+    border-radius: 2px;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+    position: absolute;
+    top: 38px;
+    width: 100%;
+
+    span {
+      cursor: pointer;
+      display: inline-block;
+      padding: 10px;
+
+      &:hover {
+        background: $gray-transparent;
+      }
+    }
+  }
+
+  .close-icon {
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+  }
+}
