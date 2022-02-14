@@ -6,13 +6,29 @@ import Select from '../../Elements/Select/Select';
 
 import './addCampaignModal.scss';
 
-function AddCampaignModal({ handleInputChange, handleSubmit, setShowModal }) {
+function AddCampaignModal({
+  handleInputChange,
+  handleSubmit,
+  setShowModal,
+  showError,
+  setShowError,
+}) {
+  const handleClose = () => {
+    setShowModal(false);
+    setShowError(false);
+  };
+
   return (
     <div className="modal">
       <div className="modal-container">
         <div className="modal-title">
           <h2>Kampagne erstellen</h2>
         </div>
+        {showError && (
+          <p className="error-message">
+            Kampagnenname and Kunde are required fields
+          </p>
+        )}
         <div className="modal-body">
           <form onSubmit={handleSubmit}>
             <div className="fields">
@@ -67,7 +83,7 @@ function AddCampaignModal({ handleInputChange, handleSubmit, setShowModal }) {
               </div>
             </div>
             <div className="buttons">
-              <Button handleClick={() => setShowModal(false)}>Abbrechen</Button>
+              <Button handleClick={handleClose}>Abbrechen</Button>
               <Button type="submit" variant="primary">
                 Erstellen
               </Button>

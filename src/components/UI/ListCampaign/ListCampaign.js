@@ -19,6 +19,7 @@ function ListCampaign() {
   const [filterOptions, setFilterOptions] = useState([]);
   const [openFilter, setOpenFilter] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [showError, setShowError] = useState(false);
   const filterNode = useRef();
   const modalNode = useRef();
 
@@ -97,9 +98,9 @@ function ListCampaign() {
       setCampaigns([...campaigns, formattedCampaign]);
       setCampaignPayload({});
       setShowModal(false);
+      setShowError(false);
     } else {
-      // Handle error exceptions
-      console.log('not valid');
+      setShowError(true);
     }
   };
 
@@ -135,6 +136,8 @@ function ListCampaign() {
           handleInputChange={handleInputChange}
           handleSubmit={handleSubmit}
           setShowModal={setShowModal}
+          showError={showError}
+          setShowError={setShowError}
         />
       )}
     </div>

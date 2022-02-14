@@ -93,6 +93,14 @@
     gap: 0 16px;
   }
 
+  .error-message {
+    @include font-small;
+    color: $red;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+  }
+
   @include media-min-width('tablet') {
     .fields {
       display: flex;
