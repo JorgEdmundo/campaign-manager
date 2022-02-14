@@ -1,6 +1,8 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
 .main {
+  height: 100%;
   position: relative;
 }
 
@@ -11,6 +13,7 @@
 
 .list {
   background: $white;
+  box-shadow: $shadow-many;
   padding: 32px 32px 45px;
 
   &-wrapper {
@@ -18,9 +21,15 @@
   }
 
   &-header {
-    align-items: baseline;
+    align-items: flex-start;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px 0;
+    justify-content: flex-start;
+
+    h2 {
+      @include font-big;
+    }
   }
 }
 
@@ -43,6 +52,7 @@
   display: flex;
   flex-direction: column;
   gap: 2px 0;
+  width: 5px;
 
   &:before,
   &:after {
@@ -55,5 +65,16 @@
   }
   &:after {
     border-top: 6px solid $primary-blue;
+  }
+}
+
+@include media-min-width('tablet') {
+  .list {
+    &-header {
+      align-items: baseline;
+      flex-direction: row;
+      gap: 0;
+      justify-content: space-between;
+    }
   }
 }

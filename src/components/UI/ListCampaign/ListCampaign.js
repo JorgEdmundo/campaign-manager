@@ -30,14 +30,14 @@ function ListCampaign() {
   }, [filterOptions, campaigns]);
 
   useEffect(() => {
-    if (openFilter || showModal) {
+    if (openFilter) {
       document.addEventListener('mousedown', handleClickOutside);
     }
 
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [openFilter, showModal]);
+  }, [openFilter]);
 
   const handleClickOutside = (e) => {
     if (filterNode.current && !filterNode.current.contains(e.target)) {
@@ -98,6 +98,7 @@ function ListCampaign() {
       setCampaignPayload({});
       setShowModal(false);
     } else {
+      // Handle error exceptions
       console.log('not valid');
     }
   };
@@ -134,7 +135,6 @@ function ListCampaign() {
           handleInputChange={handleInputChange}
           handleSubmit={handleSubmit}
           setShowModal={setShowModal}
-          modalNode={modalNode}
         />
       )}
     </div>

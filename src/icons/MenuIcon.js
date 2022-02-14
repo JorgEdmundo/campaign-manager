@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Menu = ({ ...props }) => (
+const MenuIcon = ({ ...props }) => (
   <svg
     width="24"
     height="24"
@@ -19,4 +19,4 @@ const Menu = ({ ...props }) => (
   </svg>
 );
 
-export default Menu;
+export default MenuIcon;

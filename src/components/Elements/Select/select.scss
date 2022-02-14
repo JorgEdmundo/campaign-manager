@@ -1,9 +1,12 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
 .custom-select {
   position: relative;
+  width: 100%;
 
   input {
+    @include font-small;
     cursor: pointer;
     text-transform: capitalize;
   }
@@ -15,6 +18,7 @@
   }
 
   .options {
+    @include font-small;
     background: $white;
     border: 1px solid $gray-transparent;
     border-radius: 2px;

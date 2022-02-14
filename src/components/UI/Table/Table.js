@@ -4,42 +4,60 @@ import './table.scss';
 
 function Table({ campaignList }) {
   return (
-    <div className="table">
-      <div className="table-header">
-        <div className="col">
-          CS-ID <span className="order-icon" />
-        </div>
-        <div className="col">
-          Kunde <span className="order-icon" />
-        </div>
-        <div className="col">
-          Kampagnenname <span className="order-icon" />
-        </div>
-        <div className="col">
-          Start <span className="order-icon" />
-        </div>
-        <div className="col">
-          Ende <span className="order-icon" />
-        </div>
-        <div className="col">
-          Status <span className="order-icon" />
-        </div>
-      </div>
-      {campaignList.map((campaign) => {
-        const { id, name, customer, start, end, status } = campaign;
-        return (
-          <div key={id} className="table-row">
-            <div className="col">
-              <a href="#">{id}</a>
-            </div>
-            <div className="col">{customer}</div>
-            <div className="col">{name}</div>
-            <div className="col">{start}</div>
-            <div className="col">{end}</div>
-            <div className="col">{status}</div>
-          </div>
-        );
-      })}
+    <div className="table-wrapper">
+      <table className="table">
+        <thead>
+          <tr>
+            <th>
+              <span className="head-title">
+                CS-ID <span className="order-icon" />
+              </span>
+            </th>
+            <th>
+              <span className="head-title">
+                Kunde <span className="order-icon" />
+              </span>
+            </th>
+            <th>
+              <span className="head-title">
+                Kampagnenname <span className="order-icon" />
+              </span>
+            </th>
+            <th>
+              <span className="head-title">
+                Start <span className="order-icon" />
+              </span>
+            </th>
+            <th>
+              <span className="head-title">
+                Ende <span className="order-icon" />
+              </span>
+            </th>
+            <th>
+              <span className="head-title">
+                Status <span className="order-icon" />
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {campaignList.map((campaign) => {
+            const { id, name, customer, start, end, status } = campaign;
+            return (
+              <tr key={id} className="table-row">
+                <td className="col">
+                  <a href="#">{id}</a>
+                </td>
+                <td className="col">{customer}</td>
+                <td className="col">{name}</td>
+                <td className="col">{start}</td>
+                <td className="col">{end}</td>
+                <td className="col">{status}</td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 }

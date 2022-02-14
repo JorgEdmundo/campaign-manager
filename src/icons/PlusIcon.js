@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Plus = ({ ...props }) => (
+const PlusIcon = ({ ...props }) => (
   <svg
     width="24"
     height="24"
@@ -19,4 +19,4 @@ const Plus = ({ ...props }) => (
   </svg>
 );
 
-export default Plus;
+export default PlusIcon;

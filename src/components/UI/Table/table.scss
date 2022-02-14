@@ -1,35 +1,53 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
+.table-wrapper {
+  overflow-x: scroll;
+}
+
 .table {
-  &-header {
+  overflow: scroll;
+  border-collapse: collapse;
+  width: 100%;
+
+  thead {
+    th {
+      background: $gray;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+
+  tbody {
+    td {
+      text-transform: capitalize;
+    }
+  }
+
+  th,
+  td {
+    @include font-medium;
+    border: 1px solid $gray-transparent;
+    padding: 10px 12px;
+    text-align: left;
+  }
+
+  .head-title {
     align-items: center;
     display: flex;
-    background: $gray;
-    border: 1px solid $gray-transparent;
-    height: 60px;
+    gap: 0 10px;
+  }
+}
 
-    .col {
-      align-items: center;
-      display: flex;
-      gap: 0 12px;
-    }
+@include media-min-width('tablet-wide') {
+  .table-wrapper {
+    overflow-x: unset;
   }
 
-  &-row {
-    display: flex;
-
-    .col {
-      border-bottom: 1px solid $table-border;
-      border-right: 1px solid $table-border;
-      text-transform: capitalize;
-
-      &:first-child {
-        border-left: 1px solid $table-border;
-      }
+  .table {
+    th,
+    td {
+      padding: 20px 23px;
     }
-  }
-  .col {
-    flex: 1;
-    padding: 20px 24px;
   }
 }

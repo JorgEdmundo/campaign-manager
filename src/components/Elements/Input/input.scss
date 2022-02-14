@@ -1,17 +1,16 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
 input,
 select {
+  @include font-small;
   background: $white;
   border: 1px solid $gray-transparent;
   border-radius: 3px;
   color: $dark-gray;
-  font-size: 14px;
-  line-height: 1.86;
-  letter-spacing: 0.5px;
   height: 36px;
   padding: 5px 16px;
-  width: 560px;
+  width: 100%;
 }
 
 label {
@@ -19,6 +18,47 @@ label {
   font-weight: bold;
   line-height: 1.63;
   letter-spacing: 0.57px;
-  min-width: 155px;
   text-align: right;
+}
+
+.input-date {
+  display: inline-block;
+  position: relative;
+
+  input {
+    position: relative;
+
+    &::-webkit-calendar-picker-indicator {
+      background: transparent;
+      bottom: 0;
+      color: transparent;
+      cursor: pointer;
+      height: auto;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: auto;
+    }
+    padding-left: 40px;
+  }
+
+  svg {
+    left: 16px;
+    position: absolute;
+    top: 10px;
+    height: 15px;
+    width: 15px;
+  }
+}
+
+@include media-min-width('tablet') {
+  input,
+  select {
+    width: 560px;
+  }
+
+  label {
+    min-width: 155px;
+  }
 }

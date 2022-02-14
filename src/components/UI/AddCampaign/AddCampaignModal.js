@@ -6,15 +6,10 @@ import Select from '../../Elements/Select/Select';
 
 import './addCampaignModal.scss';
 
-function AddCampaignModal({
-  handleInputChange,
-  handleSubmit,
-  setShowModal,
-  modalNode,
-}) {
+function AddCampaignModal({ handleInputChange, handleSubmit, setShowModal }) {
   return (
     <div className="modal">
-      <div className="modal-container" ref={modalNode}>
+      <div className="modal-container">
         <div className="modal-title">
           <h2>Kampagne erstellen</h2>
         </div>
@@ -42,7 +37,7 @@ function AddCampaignModal({
               <div className="field date">
                 <label>Laufzeit:</label>
                 <div className="date-fields">
-                  <div>
+                  <div className="date-field">
                     <Input
                       label="Start"
                       isRequired
@@ -51,7 +46,7 @@ function AddCampaignModal({
                       type="date"
                     />
                   </div>
-                  <div>
+                  <div className="date-field">
                     <Input
                       label="Ende"
                       isRequired
@@ -69,13 +64,6 @@ function AddCampaignModal({
                   name="status"
                   handleChange={handleInputChange}
                 />
-                {/* <label>Status:</label>
-                <select name="status" onChange={handleInputChange}>
-                  <option value="">Status festlegen</option>
-                  <option value="angebot">Angebot</option>
-                  <option value="gebucht">Gebucht</option>
-                  <option value="archiviert">Archiviert</option>
-                </select> */}
               </div>
             </div>
             <div className="buttons">

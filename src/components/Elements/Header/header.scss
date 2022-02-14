@@ -1,3 +1,4 @@
+@import '../../../styles/mixins';
 @import '../../../styles/variables';
 
 .header {
@@ -5,7 +6,12 @@
   color: $white;
   height: 64px;
   margin-bottom: 40px;
+  padding: 0 15px;
   width: 100%;
+
+  h1 {
+    @include font-big;
+  }
 
   &-wrap {
     align-items: center;
@@ -14,5 +20,9 @@
     height: 100%;
     margin: 0 auto;
     max-width: 1376px;
+  }
+
+  @include media-min-width('tablet') {
+    padding: 0;
   }
 }

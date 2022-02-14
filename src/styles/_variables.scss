@@ -15,3 +15,32 @@ $shadow-many: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
 $shadow-head: 0 0 4px 0 rgba(0, 0, 0, 0.12), 0 4px 4px 0 rgba(0, 0, 0, 0.24);
 $shadow-modal: 0 9px 46px 8px rgba(0, 0, 0, 0.12),
   0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.2);
+
+// Breakpoints
+$breakpoints: (
+  'tablet': (
+    min-width: 600px,
+  ),
+  'tablet-wide': (
+    min-width: 800px,
+  ),
+  'desktop': (
+    min-width: 1200px,
+  ),
+) !default;
+
+// Fonts
+$fs-small: 14px;
+$fs-medium: 16px;
+$fs-big: 24px;
+
+// Line Height
+$lh-xs: 14px;
+$lh-small: 24px;
+$lh-medium: 26px;
+$lh-big: 33px;
+
+// Letter Spacing
+$ls-small: 0.5px;
+$ls-medium: 0.57px;
+$ls-big: 0.86px;
